@@ -226,7 +226,7 @@ describe("Can delete a bird and update the cart accordingly", () => {
   });
   it("Deletes only a single bird, if there are duplicates on button click", () => {
     cy.get(".Cart li")
-      .eq(1)
+      .eq(0)
       .within(() => {
         cy.get("button").click();
       })

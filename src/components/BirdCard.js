@@ -1,7 +1,6 @@
 import "./BirdCard.css";
 
 function BirdCard({ bird: { name, amount, img }, handleClick }) {
-  console.log(img);
   return (
     <article className="birds card">
       <h4>{name}</h4>
