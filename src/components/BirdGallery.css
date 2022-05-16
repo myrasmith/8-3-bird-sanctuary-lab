@@ -1,0 +1,12 @@
+.bird-gallery {
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.bird-gallery li {
+    list-style: none;
+}
