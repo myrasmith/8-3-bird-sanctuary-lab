@@ -20,6 +20,15 @@ class App extends Component {
     this.setState((state) => ({ cart: [...state.cart, bird] }));
   };
 
+  deleteFromCart = (ind) => {
+    console.log("deleting", ind);
+    this.setState((state) => {
+      let newCart = [...state.cart];
+      newCart.splice(ind, 1);
+      return { cart: newCart };
+    });
+  };
+
   render() {
     const { birds, bonusItems } = this.props;
     const { cart } = this.state;
@@ -38,6 +47,7 @@ class App extends Component {
             cart={cart}
             total={total}
             discount={discount}
+            deleteFromCart={this.deleteFromCart}
           />
           <Checkout clearCart={this.clearCart} />
           <BirdGallery birds={birds} addToCart={this.addToCart} />

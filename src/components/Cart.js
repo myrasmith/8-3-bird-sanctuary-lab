@@ -1,9 +1,10 @@
 import "./Cart.css";
 
-function Cart({ discount, total, bonusItems, cart }) {
-  const cartItems = cart.map((bird) => (
-    <li key={bird.id}>
+function Cart({ discount, total, bonusItems, cart, deleteFromCart }) {
+  const cartItems = cart.map((bird, ind) => (
+    <li key={`${bird.id} - ${ind}`}>
       {bird.name}: ${bird.amount}
+      <button onClick={() => deleteFromCart(ind)}>Remove from cart</button>
     </li>
   ));
 
@@ -12,7 +13,7 @@ function Cart({ discount, total, bonusItems, cart }) {
       <h2>Cart</h2>
       <h4>Discount: {discount}%</h4>
       <h4 className="total">Total: ${total}</h4>
-      <ol class="cart-list ">{cartItems}</ol>
+      <ol className="cart-list ">{cartItems}</ol>
       <p>Your donations qualify you for the following items:</p>
       <ul>
         {total >= 100 && <li>{bonusItems[0]}</li>}
