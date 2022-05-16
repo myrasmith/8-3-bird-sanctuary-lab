@@ -83,7 +83,7 @@ describe("It can total the birds in the cart", () => {
     // need to wait because not all birds added to cart otherwise
     cy.wait(1000);
     cy.get(".Cart").within(() => {
-      cy.get("h4")
+      cy.get(".total")
         .invoke("text")
         .then((text) => {
           text = Number(text.match(/[0-9]+/g));

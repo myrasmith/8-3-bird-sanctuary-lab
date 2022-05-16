@@ -20,13 +20,21 @@ class App extends Component {
     const { birds, bonusItems } = this.props;
     const { cart } = this.state;
 
-    const total = cart.reduce((total, bird) => total + bird.amount, 0);
+    const discount = cart.length > 1 ? 10 : 0;
+    const multiplier = 1 - discount / 100;
+    const total =
+      cart.reduce((total, bird) => total + bird.amount, 0) * multiplier;
 
     return (
       <div className="App">
         <h1>Save a bird</h1>
         <div className="app-grid">
-          <Cart bonusItems={bonusItems} cart={cart} total={total} />
+          <Cart
+            bonusItems={bonusItems}
+            cart={cart}
+            total={total}
+            discount={discount}
+          />
           <Checkout />
           <BirdGallery birds={birds} addToCart={this.addToCart} />
         </div>
