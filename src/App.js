@@ -19,11 +19,14 @@ class App extends Component {
   render() {
     const { birds, bonusItems } = this.props;
     const { cart } = this.state;
+
+    const total = cart.reduce((total, bird) => total + bird.amount, 0);
+
     return (
       <div className="App">
         <h1>Save a bird</h1>
         <div className="app-grid">
-          <Cart bonusItems={bonusItems} cart={cart} />
+          <Cart bonusItems={bonusItems} cart={cart} total={total} />
           <Checkout />
           <BirdGallery birds={birds} addToCart={this.addToCart} />
         </div>

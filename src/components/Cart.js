@@ -8,11 +8,11 @@ function Cart({ discount, total, bonusItems, cart }) {
   ));
 
   return (
-    <aside className="aside cart">
+    <aside className="aside cart Cart">
       <h2>Cart</h2>
       <h4>Discount: {discount}%</h4>
       <h4>Total: ${total}</h4>
-      <ol class="cart-list Cart">{cartItems}</ol>
+      <ol class="cart-list ">{cartItems}</ol>
       <p>Your donations qualify you for the following items:</p>
       <ul></ul>
     </aside>
