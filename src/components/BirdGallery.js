@@ -1,10 +1,10 @@
 import BirdCard from "./BirdCard";
 import "./BirdGallery.css";
 
-function BirdGallery({ birds }) {
+function BirdGallery({ birds, addToCart }) {
   const birdCards = birds.map((bird) => (
     <li key={bird.id}>
-      <BirdCard bird={bird} />
+      <BirdCard bird={bird} handleClick={() => addToCart(bird)} />
     </li>
   ));
   return <ul className="bird-gallery">{birdCards}</ul>;

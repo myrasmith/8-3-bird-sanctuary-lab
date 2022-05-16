@@ -12,6 +12,10 @@ class App extends Component {
     };
   }
 
+  addToCart = (bird) => {
+    this.setState((state) => ({ cart: [...state.cart, bird] }));
+  };
+
   render() {
     const { birds, bonusItems } = this.props;
     const { cart } = this.state;
@@ -21,7 +25,7 @@ class App extends Component {
         <div className="app-grid">
           <Cart bonusItems={bonusItems} cart={cart} />
           <Checkout />
-          <BirdGallery birds={birds} />
+          <BirdGallery birds={birds} addToCart={this.addToCart} />
         </div>
       </div>
     );
