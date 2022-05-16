@@ -46,9 +46,9 @@ describe("Add to cart", () => {
     addShoeBillToCart();
     cy.get(".Cart").within((element) => {
       cy.get("li").contains("Shoebill");
-      cy.get("li").contains("Stickers");
+      //cy.get("li").contains("Stickers");
       cy.get("h4").contains("$100");
-      cy.contains("Discount: 0%");
+      //cy.contains("Discount: 0%");
     });
   });
   it("Can add multiple birds to cart", () => {
