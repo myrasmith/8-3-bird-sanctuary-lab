@@ -12,6 +12,10 @@ class App extends Component {
     };
   }
 
+  clearCart = () => {
+    this.setState({ cart: [] });
+  };
+
   addToCart = (bird) => {
     this.setState((state) => ({ cart: [...state.cart, bird] }));
   };
@@ -35,7 +39,7 @@ class App extends Component {
             total={total}
             discount={discount}
           />
-          <Checkout />
+          <Checkout clearCart={this.clearCart} />
           <BirdGallery birds={birds} addToCart={this.addToCart} />
         </div>
       </div>
