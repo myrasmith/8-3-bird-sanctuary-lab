@@ -14,7 +14,12 @@ function Cart({ discount, total, bonusItems, cart }) {
       <h4 className="total">Total: ${total}</h4>
       <ol class="cart-list ">{cartItems}</ol>
       <p>Your donations qualify you for the following items:</p>
-      <ul></ul>
+      <ul>
+        {total >= 100 && <li>{bonusItems[0]}</li>}
+        {total >= 300 && <li>{bonusItems[1]}</li>}
+        {total >= 500 && <li>{bonusItems[2]}</li>}
+        {total >= 1000 && <li>{bonusItems[3]}</li>}
+      </ul>
     </aside>
   );
 }
