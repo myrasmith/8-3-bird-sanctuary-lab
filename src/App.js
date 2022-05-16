@@ -5,15 +5,33 @@ import Checkout from "./components/Checkout";
 import "./App.css";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      cart: [],
+    };
+  }
+
+  /**
+   * Should add a bird to the end of the cart
+   *
+   * @param {Object} bird
+   */
+  addToCart = (bird) => {
+    console.log("...Adding bird:", bird.name);
+    const newCart = [...this.state.cart, bird];
+    this.setState({ cart: newCart });
+  };
+
   render() {
     const { birds, bonusItems } = this.props;
     return (
       <div className="App">
         <h1>Save a bird</h1>
         <div className="app-grid">
-          <Cart bonusItems={bonusItems} />
+          <Cart bonusItems={bonusItems} cart={this.state.cart} />
           <Checkout />
-          <BirdGallery birds={birds} />
+          <BirdGallery birds={birds} addToCart={this.addToCart} />
         </div>
       </div>
     );
