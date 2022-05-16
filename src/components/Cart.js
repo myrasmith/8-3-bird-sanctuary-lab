@@ -6,7 +6,7 @@ function Cart({ discount, total, bonusItems }) {
       <h2>Cart</h2>
       <h4>Discount: {discount}%</h4>
       <h4>Total: ${total}</h4>
-      <ol class="cart-list"></ol>
+      <ol class="cart-list Cart"></ol>
       <p>Your donations qualify you for the following items:</p>
       <ul>
         {total >= 100 && <li>{bonusItems[0]}</li>}
