@@ -1,6 +1,30 @@
 [![Pursuit Logo](https://avatars1.githubusercontent.com/u/5825944?s=200&v=4)](https://pursuit.org)
 
-# Module Three Mid Module Assessment: Garage Sale App
+# Bird Sanctuary Solution Repo
+
+This repo contains solution code for the bird sanctuary lab. In this readme, you'll find some tips for how to navigate the solution code.
+
+## Navigating the solution code
+
+- Run `git branch` to see a list of available git branches. Hit `q` to exit the editor when you are done looking at the branches.
+  - Each branch in this repo contains one more step in completing this lab
+  - The first two branches contain code that sets up a static app and implements the initial application state. The remaining branches implement one feature in a test suite.
+
+_Exercise: Use git to figure out what the last numbered branch is._
+
+- To switch branches, use `git checkout`. For example, if you want to view the solution code that creates a static app, run `git checkout 1-static-app`.
+
+_Excercise: Use git to navigate to the branch `2-add-state`._
+
+- To look at what changes have been made across two branches of a repo, use `git diff`. For example, if you wanted to see what code had been added to complete the bonus items feature, you would:
+  - run `git checkout 6-bonus-items` to pull up the solution code for the bonus items feature
+  - run `git diff 5-apply-discount` to see what changes were made to the project to implement the bonus items feature since the last step was completed
+
+_Exercise: Use git to figure out which files were updated in the second step (`2-add-state`)_
+
+_Note: If you make changes to the code on a branch, git won’t let you switch branches without either stashing or committing your work. If you want to save your work and update the branch, add and commit your code first. Otherwise, you may run `git stash` before navigating to another branch._
+
+# Lab Instructions
 
 ## Getting Started
 
